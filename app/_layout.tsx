@@ -4,6 +4,7 @@ import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
+import { View } from "react-native";
 import "./global.css";
 
 // 폰트 로딩 중 스플래시 화면을 유지합니다.
@@ -30,14 +31,14 @@ export default function RootLayout() {
 		return null;
 	}
 
-	return (
+	return <View className="flex-1 w-full md:max-w-[1000px] mx-auto">
 		<QueryClientProvider client={queryClient}>
 			<Stack
 				screenOptions={{
 					headerTitleStyle: {
 						fontFamily: `Pretendard-SemiBold`,
 					},
-					headerShown: false
+					headerShown: false,
 				}}
 			>
 				<Stack.Protected guard={isLoggedIn}>
@@ -49,6 +50,6 @@ export default function RootLayout() {
 				</Stack.Protected>
 			</Stack>
 		</QueryClientProvider>
-	);
+	</View>;
 }
 

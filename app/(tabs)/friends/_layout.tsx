@@ -8,7 +8,15 @@ export default function FriendsLayout() {
 			<Stack.Screen
 				name="index"
 				options={{
-					title: `친구목록`
+					title: `친구목록`,
+					headerStyle: {
+						backgroundColor: `#A67C52`,
+					},
+					headerTitleStyle: {
+						color: `#FFF8F0`,
+						fontFamily: `Pretendard-Bold`,
+						fontSize: 24,
+					}
 				}}
 			/>
 			<Stack.Screen
